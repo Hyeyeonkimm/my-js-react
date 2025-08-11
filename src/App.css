@@ -1,0 +1,190 @@
+/* 기본 리셋 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafa;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.instagram-post {
+  width: 400px;
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.profile-pic {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.username {
+  flex: 1;
+  font-weight: bold;
+  color: #262626;
+}
+
+.more-menu {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.post-image img {
+  width: 100%;
+  display: block;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.left-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.action-btn {
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-btn:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+
+.action-btn:active {
+  animation: likeAnimation 0.3s ease-in-out;
+}
+
+.post-content {
+  padding: 10px;
+}
+
+.likes {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #262626;
+}
+
+.caption, .comment {
+  margin-bottom: 5px;
+}
+
+.caption .username, .comment .username {
+  font-weight: bold;
+  margin-right: 5px;
+  color: #262626;
+}
+
+.caption .text, .comment .text {
+  color: #262626;
+}
+
+.time {
+  font-size: 12px;
+  color: #8e8e8e;
+  margin-top: 10px;
+}
+
+/* 댓글 목록 스타일 */
+.comments-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.comment {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* 댓글 입력 폼 스타일 */
+.comment-form {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #efefef;
+  background-color: white;
+}
+
+.comment-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 14px;
+  color: #262626;
+  background-color: white;
+}
+
+.comment-input::placeholder {
+  color: #8e8e8e;
+}
+
+.comment-submit {
+  background: none;
+  border: none;
+  color: #0095f6;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.comment-submit:disabled {
+  color: #c3e0fb;
+  cursor: not-allowed;
+}
+
+.comment-submit:hover:not(:disabled) {
+  color: #00376b;
+}
+
+/* 애니메이션 */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes likeAnimation {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+/* 스크롤바 스타일링 (선택사항) */
+.comments-list::-webkit-scrollbar {
+  width: 3px;
+}
+
+.comments-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.comments-list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
