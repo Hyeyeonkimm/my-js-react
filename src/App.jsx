@@ -2,6 +2,7 @@ import React from 'react';
 import HeroCarousel from './components/HeroCarousel';
 import Navigation from './components/Navigation';
 import BrandIntroduction from './components/BrandIntroduction';
+import BrandCollaboration from './components/BrandCollaboration'; // 👈 이 줄 추가
 
 export default function App() {
   return (
@@ -21,6 +22,11 @@ export default function App() {
           {/* 브랜드 소개 섹션 */}
           <div className="w-full">
             <BrandIntroduction />
+          </div>
+
+          {/* 브랜드 콜라보레이션 섹션 👈 이 부분 추가 */}
+          <div className="w-full">
+            <BrandCollaboration />
           </div>
         </div>
       </div>

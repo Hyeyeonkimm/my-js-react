@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Menu } from 'lucide-react';
-import svgPaths from "../imports/svg-kws1spihd6";
+//import svgPaths from "../imports/svg-kws1spihd6";
 
 const navigationItems = [
   { name: 'Collaboration', href: '/collaboration' },
@@ -72,34 +72,37 @@ export default function Navigation() {
           </h1>
         </div>
 
-        {/* 메인 네비게이션 */}
+        {/* 메인 네비게이션 - ⭐ 여기부터 수정됨 */}
         <nav className="relative">
-          {/* 모바일 햄버거 메뉴 */}
-          <button
-            onClick={handleMenuClick}
-            className="lg:hidden absolute left-0 top-1/2 -translate-y-1/2 p-2"
-            aria-label="메뉴 열기"
-          >
-            <Menu className="w-6 h-6 text-[#fd7c20]" />
-          </button>
+          <div className="flex items-center justify-center min-h-[82px] relative">
+            
+            {/* 햄버거 메뉴 - GNB와 같은 라인에 위치하도록 수정 */}
+            <button
+              onClick={handleMenuClick}
+              className="absolute left-0 p-2"
+              aria-label="메뉴 열기"
+            >
+              <Menu className="w-6 h-6 text-[#fd7c20]" />
+            </button>
 
-          {/* 데스크톱 네비게이션 */}
-          <div className="hidden lg:flex gap-12 items-center justify-center pb-8">
-            {navigationItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => handleNavClick(item.href)}
-                onMouseEnter={() => setHoveredItem(item.name)}
-                onMouseLeave={() => setHoveredItem(null)}
-                className={`text-[#fd7c20] text-base transition-all duration-200 ${
-                  hoveredItem === item.name 
-                    ? 'font-pretendard font-black scale-105' 
-                    : 'font-pretendard font-extrabold'
-                }`}
-              >
-                {item.name}
-              </button>
-            ))}
+            {/* 데스크톱 네비게이션 */}
+            <div className="hidden lg:flex gap-12 items-center justify-center">
+              {navigationItems.map((item) => (
+                <button
+                  key={item.name}
+                  onClick={() => handleNavClick(item.href)}
+                  onMouseEnter={() => setHoveredItem(item.name)}
+                  onMouseLeave={() => setHoveredItem(null)}
+                  className={`text-[#fd7c20] text-base transition-all duration-200 ${
+                    hoveredItem === item.name 
+                      ? 'font-pretendard font-black scale-105' 
+                      : 'font-pretendard font-extrabold'
+                  }`}
+                >
+                  {item.name}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* 모바일 네비게이션 메뉴 */}
