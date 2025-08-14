@@ -2,7 +2,8 @@ import React from 'react';
 import HeroCarousel from './components/HeroCarousel';
 import Navigation from './components/Navigation';
 import BrandIntroduction from './components/BrandIntroduction';
-import BrandCollaboration from './components/BrandCollaboration'; // 👈 이 줄 추가
+import BrandCollaboration from './components/BrandCollaboration';
+import { WhatsBest } from './components/WhatsBest'; // 👈 새로 추가: WhatsBest 컴포넌트 import
 
 export default function App() {
   return (
@@ -24,9 +25,14 @@ export default function App() {
             <BrandIntroduction />
           </div>
 
-          {/* 브랜드 콜라보레이션 섹션 👈 이 부분 추가 */}
+          {/* 브랜드 콜라보레이션 섹션 */}
           <div className="w-full">
             <BrandCollaboration />
+          </div>
+
+          {/* What's Best 섹션 👈 새로 추가: WhatsBest 컴포넌트 사용 */}
+          <div className="w-full">
+            <WhatsBest />
           </div>
         </div>
       </div>
